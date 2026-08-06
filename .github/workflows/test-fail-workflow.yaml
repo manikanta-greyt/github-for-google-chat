@@ -1,0 +1,15 @@
+name: Test Workflow Run
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intentionally Fail Workflow
+        run: |
+          echo "Simulating a build error..."
+          exit 1
